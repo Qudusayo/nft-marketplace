@@ -2,36 +2,46 @@ import { Button } from "../components/Button/Index";
 import NFTCard from "../components/NFTCard/Index";
 import Social from "../components/Social/Index";
 import StatCard from "../components/StatCard/Index";
-import { RiSearchLine } from "react-icons/ri"
+import { RiSearchLine } from "react-icons/ri";
 
 export default function Home() {
   return (
-    <div>
-      <div className=" bg-[url('https://rarible.mypinata.cloud/ipfs/QmaVsRhqtrgSGrj1ftTVy3WRp3yFDWY8f6QSVxifsx9Q8R')] bg-center bg-cover h-screen">
+    <div className="container">
+      <div className=" bg-[url('https://rarible.mypinata.cloud/ipfs/QmaVsRhqtrgSGrj1ftTVy3WRp3yFDWY8f6QSVxifsx9Q8R')] bg-center bg-cover min-h-screen">
         <nav className="flex items-center justify-between py-5 px-8 pl-24 pb-0">
-          <h2 className="font-bold">Meta Angels</h2>
-          <div className="border py-2 px-4 rounded-full flex items-center justify-between w-4/12 bg-tetiary cursor-pointer">
+          <h2 className="font-bold hidden">Meta Angels</h2>
+          <div className="border py-2 px-4 rounded-full flex items-center justify-between w-4/12 bg-tetiary cursor-pointer hidden">
             <span>Search by Meta Angels</span>
-            <RiSearchLine className="rotate-90"/>
+            <RiSearchLine className="rotate-90" />
           </div>
-          <Button title="Connect Wallet" />
+          <Button
+            title={
+              <span>
+                Connect <span className="hidden">Wallet</span>
+              </span>
+            }
+            className="ml-auto text-sm"
+          />
         </nav>
-        <div className="flex items-center w-11/12 m-auto bg-center pt-16">
+
+        <div className="flex items-center w-11/12 m-auto bg-center pt-14 flex-col-reverse">
           <div>
-            <h2 className="font-semibold text-4xl my-0">Meta Angels</h2>
+            <h2 className="font-semibold text-4xl my-0 text-center mt-8">
+              Meta Angels
+            </h2>
             <div>
-              <span className="font-normal w-4/6 inline-block text-xl text-[#04040599] my-4">
+              <span className="font-normal w-4/6 inline-block text-xl text-[#04040599] my-4 text-center w-full m-auto">
                 10,000 unique Meta Angels, each a membership card to our
-                engaged, valuable community.
+                engaged, valuable community.{" "}
                 <span className="text-primary">Read more</span>
               </span>
-              <div className="mt-4">
+              <div className="mt-4 text-center mb-[6em]">
                 <Button title="List Your Meta Angels" type="primary" />
                 <Button title="Explore" className="ml-4" />
               </div>
             </div>
           </div>
-          <div className="border w-2/5 h-[400px] rounded-2xl bg-shaded-repo bg-center bg-100% transition-all hover:bg-105% ease-in-out duration-300 text-white font-semibold text-2xl p-8 cursor-pointer flex items-end shadow-[rgba(0_0_0_0.2)_0px_10px_15px_-1px,_rgba(0_0_0_0.11)_0px_4px_6px_-2px]">
+          <div className="border w-2/5 h-[400px] rounded-2xl bg-shaded-repo bg-center bg-100% transition-all hover:bg-105% ease-in-out duration-300 text-white font-semibold text-[1.75em] p-8 pb-7 cursor-pointer flex items-end shadow-[rgba(0_0_0_0.2)_0px_10px_15px_-1px,_rgba(0_0_0_0.11)_0px_4px_6px_-2px] w-[100%]  h-[22.2rem]">
             Meta Angels #7281
           </div>
         </div>
@@ -40,8 +50,10 @@ export default function Home() {
       <StatCard />
 
       <div className="text-center">
-        <h2 className="font-semibold text-4xl">Why list on Meta Angels?</h2>
-        <p className="font-normal  text-xl text-[#04040599] w-7/12 m-auto my-6">
+        <h2 className="font-semibold text-4xl text-[2rem] leading-[2.5rem]">
+          Why list on Meta Angels?
+        </h2>
+        <p className="font-normal leading-[1.9rem] text-[1.35rem] text-[#04040599] m-auto my-6 w-11/12">
           Listing your NFT on the Meta Angels marketplace means lower fees on
           your transaction than other platforms, while still contributing 0.5%
           of the sale to the community wallet to fund Angel Grants. We call that
@@ -50,11 +62,11 @@ export default function Home() {
         <Button title="List Your Meta Angels" type="primary" />
       </div>
 
-      <div className="my-28">
-        <h2 className="text-center  text-4xl font-semibold">
-          Explore <span className="text-primary">Recently Listed</span>
+      <div className="my-28 mb-24">
+        <h2 className="text-center  text-4xl font-semibold  leading-[3rem]">
+          Explore <span className="text-primary block">Recently Listed</span>
         </h2>
-        <div className="mt-12 m-auto w-11/12 flex flex-wrap gap-4 gap-y-10">
+        <div className="mt-12 m-auto w-11/12 flex flex-wrap gap-4 gap-y-10 gap-y-7">
           <NFTCard
             img="https://metaangelsnft.mypinata.cloud/ipfs/QmPeYZJnGTooUk9zq2ATmXMnEXaYc3ms5zvBS4vkBKNmVK/8739.jpeg"
             name="Meta Angels #8739"
@@ -146,11 +158,11 @@ export default function Home() {
         />
       </div>
       <Social />
-      <footer className="my-16 mb-0 p-8 border-t flex justify-between items-center">
-        <span>© Meta Angels 2022</span>
-        <div>
-          <span>Terms</span>
-          <span className="inline-block ml-6">Built by Qudusayo</span>
+      <footer className="my-16 mb-0 p-8 pt-0 border-t flex justify-between items-center flex-col text-txtLight text-sm">
+        <span  className="pb-4">© Meta Angels 2022</span>
+        <div className="flex flex-col text-center">
+          <span className="pb-4">Terms</span>
+          <span className="inline-block md:ml-6 ml-0">Built by Qudusayo</span>
         </div>
       </footer>
     </div>

@@ -5,7 +5,7 @@ export function Button({ title, type, className }) {
         type === "primary"
           ? "bg-primary text-white hover:bg-secondary hover:text-white"
           : "bg-tetiary text-dark hover:bg-primary hover:text-white"
-      }  py-3 px-6 rounded-full transition-all ${className}`}
+      }  py-4 px-6 rounded-full transition-all ${className}`}
     >
       {title}
     </button>
