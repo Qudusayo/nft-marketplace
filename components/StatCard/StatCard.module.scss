@@ -1,0 +1,39 @@
+.StatCard {
+  display: flex;
+  background-color: rgba(4, 4, 5, 0.05);
+  width: 95%;
+  margin: 0 auto 6em;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7.2em 4em;
+  box-sizing: border-box;
+}
+
+.StatData {
+  color: black;
+  align-items: center;
+  text-align: center;
+  
+  span{
+    display: block;
+    
+    &:nth-of-type(1){
+      color: rgb(8, 8, 154);
+      font-size: .9em;
+      font-weight: 500;
+    }
+    
+    &:nth-of-type(2){
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+  }
+
+  &:nth-of-type(1){
+    align-self: flex-end;
+    span{
+      font-size: 3em;
+    }
+  }
+}

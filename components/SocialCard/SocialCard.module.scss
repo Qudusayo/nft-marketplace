@@ -1,0 +1,29 @@
+.SocialCard{
+  background-color: rgba(4, 4, 5, 0.05);
+  width: 95%;
+  margin: 4em auto;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 6em 2em;
+  box-sizing: border-box;
+}
+
+.SocialInfo{
+  display: flex;
+  align-items: center;
+
+  div{
+    margin-left: 1.5em;
+
+    span{
+      display: block;
+
+      &:nth-of-type(1){
+        font-size: .9em;
+        color: rgba(4, 4, 5, 0.65);;
+      }
+    }
+  }
+}

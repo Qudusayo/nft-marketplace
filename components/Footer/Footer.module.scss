@@ -1,0 +1,17 @@
+.Footer {
+  border-top: 1px solid rgba(4, 4, 5, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3em;
+  font-size: .85em;
+  color: rgba(4, 4, 5, 0.5);
+
+  div{
+    span{
+      &:nth-of-type(2){
+        margin-left: 2em;
+      }
+    }
+  }
+}

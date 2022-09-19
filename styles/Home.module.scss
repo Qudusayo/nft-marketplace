@@ -1,0 +1,48 @@
+.Home {
+  .NFTDisplay {
+    margin: 6em auto;
+    width: 100%;
+
+    h1 {
+      margin: 0 0 1.3em 0;
+      text-align: center;
+      font-size: 2.4em;
+
+      span {
+        color: rgb(8, 8, 154);
+      }
+    }
+
+    &Preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      width: 95%;
+      justify-content: center;
+      gap: 1em;
+      row-gap: 2.2em;
+      margin: auto;
+    }
+
+    .Button {
+      display: block;
+      margin: 2em auto 0;
+    }
+  }
+
+  .Reason {
+    width: 50em;
+    margin: auto;
+    text-align: center;
+
+    h1 {
+      font-weight: 600;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.4em;
+      color: rgba(4, 4, 5, 0.65);
+      line-height: 1.4em;
+    }
+  }
+}

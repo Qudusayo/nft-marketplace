@@ -1,0 +1,76 @@
+.NFTCard {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(4, 4, 5, 0.05);
+  transition: background 0.2s linear;
+
+  h2 {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0;
+    margin: 0.8em auto 0.8em 1em;
+  }
+
+  img {
+    border-radius: 15px;
+    // width: 96%;
+  }
+
+  button {
+    transition: all 0.1s linear;
+    position: absolute;
+    left: 32%;
+    top: 75%;
+    z-index: -1;
+    opacity: 0;
+    cursor: pointer;
+
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(8, 8, 154);
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0.8em 1.8em;
+  }
+
+  .pricingInfo {
+    padding: 1em;
+    display: flex;
+    border-radius: 15px;
+    transition: background 0.2s linear;
+    background-color: rgba(4, 4, 5, 0.05);
+
+    div {
+      flex: 1;
+      span {
+        display: block;
+        font-size: 0.85em;
+
+        &:nth-of-type(1) {
+          color: rgb(8, 8, 154);
+          margin-bottom: 0.3em;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    background-color: rgba(4, 4, 5, 0.15);
+
+    .pricingInfo {
+      background-color: rgba(4, 4, 5, 0.05);
+    }
+
+    button {
+      display: block;
+      top: 55%;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
