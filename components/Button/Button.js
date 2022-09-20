@@ -1,15 +1,16 @@
 import styles from "./Button.module.scss";
 
-export default function Button({ title, type, className }) {
+export default function Button({ title, type, className, children }) {
   return (
     <button
       className={[
         styles.Button,
         className,
-        type === "secondary" && styles.secondary,
+        type?.includes("secondary") && styles.secondary,
+        type?.includes("small") && styles.smallBtn,
       ].join(" ")}
     >
-      {title}
+      {title || children}
     </button>
   );
 }

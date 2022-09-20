@@ -1,28 +1,12 @@
-import { RiSearchLine } from "react-icons/ri";
 import Button from "../Button/Button";
+import Navbar from "../Navbar/Navbar";
 
 import styles from "./Header.module.scss";
 
 export default function Header() {
   return (
     <div className={styles.Header}>
-      <nav className="">
-        <h2 className="">Meta Angels</h2>
-        <div className={styles.SearchBox}>
-          <span>Search by Meta Angels</span>
-          <RiSearchLine size={15} className={styles.SearchBoxIcon} />
-        </div>
-        <Button
-          title={
-            <span>
-              Connect <span className="">Wallet</span>
-            </span>
-          }
-          className={styles.Button}
-          type="secondary"
-        />
-      </nav>
-
+      <Navbar />
       <main>
         <div className={styles.ProjectInfo}>
           <h2 className="">Meta Angels</h2>
