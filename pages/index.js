@@ -1,12 +1,12 @@
 import { BsChevronDown } from "react-icons/bs";
 
-import Button from "../components/Button/index";
-import NFTCard from "../components/NFTCard/index";
+import Button from "../components/Button/Index";
+import NFTCard from "../components/NFTCard/Index";
 
-import SocialCard from "../components/SocialCard/index";
-import Footer from "../components/Footer/index";
-import StatCard from "../components/StatCard/index";
-import Header from "../components/Header/index";
+import SocialCard from "../components/SocialCard/Index";
+import Footer from "../components/Footer/Index";
+import StatCard from "../components/StatCard/Index";
+import Header from "../components/Header/Index";
 
 import styles from "./../styles/Home.module.scss";
 
