@@ -1,4 +1,7 @@
 .Home {
+  max-width: 1440px;
+  margin: auto;
+
   .NFTDisplay {
     margin: 6em auto;
     width: 100%;
@@ -10,6 +13,11 @@
 
       span {
         color: rgb(8, 8, 154);
+
+        @media screen and (max-width: 510px) {
+          text-align: center;
+          display: block;
+        }
       }
     }
 
@@ -21,6 +29,14 @@
       gap: 1em;
       row-gap: 2.2em;
       margin: auto;
+
+      @media screen and (max-width: 1144px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media screen and (max-width: 690px) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .Button {
@@ -30,7 +46,8 @@
   }
 
   .Reason {
-    width: 50em;
+    width: 95%;
+    max-width: 50em;
     margin: auto;
     text-align: center;
 
@@ -40,9 +57,10 @@
 
     p {
       font-weight: 400;
-      font-size: 1.4em;
+      font-size: 1.375em;
       color: rgba(4, 4, 5, 0.65);
       line-height: 1.4em;
+      margin: 0 auto 24px;
     }
   }
 }

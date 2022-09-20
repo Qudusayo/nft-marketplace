@@ -5,6 +5,14 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-img{
+img {
   max-width: 100%;
+}
+
+body {
+  background-image: url("https://rarible.mypinata.cloud/ipfs/QmaVsRhqtrgSGrj1ftTVy3WRp3yFDWY8f6QSVxifsx9Q8R");
+  background-position: top;
+  background-size: max(1440px, 100vw);
+  width: 100vw;
+  background-repeat: no-repeat;
 }

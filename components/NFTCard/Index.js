@@ -1,6 +1,6 @@
 import styles from "./NFTCard.module.scss";
 
-export default function NFTCard({ image, name, price, bid }) {
+export default function NFTCard({ image, name, price, bid, forSale = true }) {
   return (
     <div className={styles.NFTCard}>
       <img src={image} alt={name} />
@@ -15,7 +15,7 @@ export default function NFTCard({ image, name, price, bid }) {
           <span>{bid}</span>
         </div>
       </div>
-      <button>Buy now</button>
+      {forSale && <button>Buy now</button>}
     </div>
   );
 }

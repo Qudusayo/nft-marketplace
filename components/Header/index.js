@@ -1,5 +1,5 @@
 import { RiSearchLine } from "react-icons/ri";
-import Button from "../Button/Index";
+import Button from "../Button";
 
 import styles from "./Header.module.scss";
 
@@ -10,7 +10,7 @@ export default function Header() {
         <h2 className="">Meta Angels</h2>
         <div className={styles.SearchBox}>
           <span>Search by Meta Angels</span>
-          <RiSearchLine className={styles.SearchBoxIcon} />
+          <RiSearchLine size={15} className={styles.SearchBoxIcon} />
         </div>
         <Button
           title={

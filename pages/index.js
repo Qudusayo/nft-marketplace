@@ -1,4 +1,4 @@
-import Button from "../components/Button/Index";
+import Button from "../components/Button";
 import NFTCard from "../components/NFTCard";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -25,8 +25,10 @@ export default function Home() {
       </div>
       <div className={styles.NFTDisplay}>
         <h1>
-          Explore <span>Recently Listed </span>
-          <BsChevronDown size={20} fill="rgb(8, 8, 154)" />
+          Explore{" "}
+          <span>
+            Recently Listed <BsChevronDown size={20} fill="rgb(8, 8, 154)" />
+          </span>
         </h1>
         <div className={styles.NFTDisplayPreview}>
           <NFTCard
