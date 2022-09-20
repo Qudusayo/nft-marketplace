@@ -46,10 +46,10 @@ export default function User() {
             <IoChevronDownOutline />
           </Button>
         </div>
-        {false ? (
+        {true ? (
           <div className={styles.NoResult}>
             <h2>No results</h2>
-            <p>You don't have any Meta Angels yet. Explore Meta Angels</p>
+            <p>You don&apos;t have any Meta Angels yet. Explore Meta Angels</p>
             <Button title={"Explore collections"} type="small" />
           </div>
         ) : (
