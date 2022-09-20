@@ -1,5 +1,5 @@
 import { RiSearchLine } from "react-icons/ri";
-import Button from "../Button";
+import Button from "../Button/index";
 
 import styles from "./Header.module.scss";
 

@@ -21,9 +21,9 @@
     text-overflow: ellipsis;
   }
 
-  img {
+  &Image {
     border-radius: 15px;
-    // width: 96%;
+    width: 96% !important;
   }
 
   button {
