@@ -18,13 +18,13 @@ export default function Footer({ activeSocial = false }) {
       </div>
       {activeSocial && (
         <div className={styles.socials}>
-          <a target={"_blank"} href="https://twitter.com">
+          <a target={"_blank"} rel="noreferrer" href="https://twitter.com">
             <SiTwitter size={25} fill="rgb(8, 8, 154)" />
           </a>
-          <a target={"_blank"} href="https://instagram.com">
+          <a target={"_blank"} rel="noreferrer" href="https://instagram.com">
             <SiInstagram size={25} fill="rgb(8, 8, 154)" />
           </a>
-          <a target={"_blank"} href="https://discord.com">
+          <a target={"_blank"} rel="noreferrer" href="https://discord.com">
             <SiDiscord size={25} fill="rgb(8, 8, 154)" />
           </a>
         </div>
