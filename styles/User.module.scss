@@ -10,8 +10,11 @@
     }
 
     .copyButton {
+      transition: all 0.2s linear;
       display: flex;
       align-items: center;
+      justify-content: center;
+      min-width: 145px;
 
       span {
         margin-right: 0.5em;
@@ -28,6 +31,14 @@
         margin-bottom: 0.5em;
       }
     }
+  }
+
+  .None {
+    display: none;
+  }
+
+  .Block {
+    display: inline-block;
   }
 
   div {
@@ -92,4 +103,13 @@
       }
     }
   }
+}
+
+.Menu {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-radius: 7px !important;
+  font-size: 0.9em !important;
+  padding: .65em 0.5em !important;
 }

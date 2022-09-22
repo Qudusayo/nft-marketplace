@@ -83,6 +83,12 @@
           display: none;
         }
       }
+
+      @media screen and (max-width: 336px) {
+        &:nth-of-type(2) {
+          display: block;
+        }
+      }
     }
   }
 

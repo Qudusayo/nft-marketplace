@@ -37,6 +37,10 @@
       @media screen and (max-width: 690px) {
         grid-template-columns: 1fr 1fr;
       }
+
+      @media screen and (max-width: 336px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     .Button {
