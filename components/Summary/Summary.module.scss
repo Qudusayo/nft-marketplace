@@ -1,0 +1,20 @@
+.Summary {
+  width: 85%;
+  margin: auto;
+  border-bottom: 1px solid rgba(4, 4, 4, 0.15);
+  padding: 1em 0;
+
+  &Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+
+    h2 {
+      font-weight: 600;
+      margin: 0;
+      font-size: 1.2em;
+    }
+  }
+}
