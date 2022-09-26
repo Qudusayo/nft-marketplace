@@ -9,6 +9,8 @@
   transition: background 0.2s linear;
   display: block;
 
+  
+
   h2 {
     font-size: 0.9375em;
     font-weight: 600;
@@ -19,6 +21,15 @@
     width: 90%;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+  
+  @media screen and (max-width: 336px) {
+    width: 95%;
+    margin: auto;
+    
+    h2{
+      margin: 1em auto 1em .75em;
+    }
   }
 
   img {

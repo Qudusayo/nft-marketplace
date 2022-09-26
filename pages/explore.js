@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
@@ -19,6 +19,7 @@ import Options from "../components/Options/Options";
 
 export default function Explore({ nfts }) {
   const [activeTab, setActiveTab] = useState("nft");
+  const [filterDisplay, setFilterDisplay] = useState(true);
   const [searchInput, setSearchInput] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
   const [filterType, setFilterType] = useState("rl");
@@ -37,6 +38,22 @@ export default function Explore({ nfts }) {
     setAnchorEl(null);
   };
   const [smallControlDisplay, setSmallControlDisplay] = useState(true);
+  const [gridDisplayClass, setGridDisplayClass] = useState(styles.filterLgPrev);
+
+  useEffect(() => {
+    if (filterDisplay && !smallControlDisplay) {
+      setGridDisplayClass(styles.filterLgPrev);
+    }
+    if (filterDisplay && smallControlDisplay) {
+      setGridDisplayClass(styles.filterSmPrev);
+    }
+    if (!filterDisplay && !smallControlDisplay) {
+      setGridDisplayClass(styles.lgPrev);
+    }
+    if (!filterDisplay && smallControlDisplay) {
+      setGridDisplayClass(styles.smPrev);
+    }
+  }, [smallControlDisplay, filterDisplay]);
 
   return (
     <div className={styles.Explore}>
@@ -69,7 +86,11 @@ export default function Explore({ nfts }) {
           </span>
         </div>
         <div className={styles.ExploreControls}>
-          <Button className={styles.ctrlButton} type={["secondary", "small"]}>
+          <Button
+            className={[styles.ctrlButton, styles.filterDisplayBtn].join(" ")}
+            type={["secondary", "small"]}
+            clickFunction={() => setFilterDisplay((showFilter) => !showFilter)}
+          >
             <IoIosArrowBack />
             <span>Filters</span>
           </Button>
@@ -82,7 +103,7 @@ export default function Explore({ nfts }) {
             />
             {searchInput && <GrClose onClick={() => setSearchInput("")} />}
           </div>
-          <div>
+          <div className={styles.MenuOptions}>
             <div
               aria-controls={open ? "demo-positioned-menu" : undefined}
               aria-haspopup="true"
@@ -145,51 +166,57 @@ export default function Explore({ nfts }) {
         </div>
       </header>
       <div className={styles.Collections}>
-        <div className={styles.CollectionsFilter}>
-          <div className={styles.CollectionsFilterContainer}>
-            <div style={{ height: "2em" }}></div>
-            <div className={styles.CollectionsFilterContainerControl}>
-              <Summary title="Status">
-                <Toggle label={"listed"} title="Listed Items only" />
-                <Toggle label={"c-listing"} title="Only Community listing" />
-              </Summary>
-              <Summary title="Price">
-                <h2>Hello</h2>
-                <h2>Hello</h2>
-                <h2>Hello</h2>
-              </Summary>
-              <Summary title="Rarity Rank (#1 Rarest)">
-                <MultiRangeSlider
-                  min={0}
-                  max={10000}
-                  onChange={({ min, max }) =>
-                    console.log(`min = ${min}, max = ${max}`)
-                  }
-                />
-              </Summary>
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Summary title="Status" />
-              <Toggle />
-            </div>
-            <div className={styles.CollectionsFilterContainerButtons}>
-              <Button title="Apply" type="secondary" />
-              <Button title="Clear Filters" type="secondary" />
+        {filterDisplay && (
+          <div className={styles.CollectionsFilter}>
+            <div className={styles.CollectionsFilterContainer}>
+              <div style={{ height: "2em" }}></div>
+              <div className={styles.CollectionsFilterContainerControl}>
+                <Summary title="Status">
+                  <Toggle label={"listed"} title="Listed Items only" />
+                  <Toggle label={"c-listing"} title="Only Community listing" />
+                </Summary>
+                <Summary title="Price">
+                  <h2>Hello</h2>
+                  <h2>Hello</h2>
+                  <h2>Hello</h2>
+                </Summary>
+                <Summary title="Rarity Rank (#1 Rarest)">
+                  <MultiRangeSlider
+                    min={0}
+                    max={10000}
+                    onChange={({ min, max }) =>
+                      console.log(`min = ${min}, max = ${max}`)
+                    }
+                  />
+                </Summary>
+                <Summary title="Hello" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Summary title="Status" />
+                <Toggle />
+              </div>
+              <div className={styles.CollectionsFilterContainerButtons}>
+                <Button title="Apply" type="secondary" />
+                <Button title="Clear Filters" type="secondary" />
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.CollectionsView}>
-          {nfts.slice(0, 3).map((listedNft, index) => (
+        )}
+        <div
+          className={[styles.CollectionsView, gridDisplayClass].join(
+            " "
+          )}
+        >
+          {nfts.map((listedNft, index) => (
             <NFTCard
               key={index}
               image={listedNft.image}
