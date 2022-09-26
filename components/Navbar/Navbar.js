@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { RiSearchLine } from "react-icons/ri";
-import { CustomConnectBtn } from "../CustomConnectBtn/CustomConnectBtn";
+
+import CustomConnectBtn from "../CustomConnectBtn/CustomConnectBtn";
 
 import styles from "./Navbar.module.scss";
 

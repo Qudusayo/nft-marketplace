@@ -9,7 +9,7 @@ import Button from "../Button/Button";
 import styles from "./CustomConnectBtn.module.scss";
 import Options from "../Options/Options";
 
-export const CustomConnectBtn = () => {
+export default function CustomConnectBtn() {
   const { disconnectAsync } = useDisconnect();
   const { push } = useRouter();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -131,4 +131,4 @@ export const CustomConnectBtn = () => {
       }}
     </ConnectButton.Custom>
   );
-};
+}
