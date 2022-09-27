@@ -80,8 +80,10 @@
         color: rgba(4, 4, 5, 0.5);
       }
 
-      button {
+      span {
         width: 100%;
+        display: inline-block;
+        box-sizing: border-box;
       }
     }
 
@@ -111,5 +113,5 @@
   justify-content: space-between !important;
   border-radius: 7px !important;
   font-size: 0.9em !important;
-  padding: .65em 0.5em !important;
+  padding: 0.65em 0.5em !important;
 }

@@ -167,7 +167,12 @@ export default function Home({ props }) {
             />
           ))}
         </div>
-        <Button title="Explore Meta Angels" className={styles.Button} />
+        <Button
+          title="Explore Meta Angels"
+          type={["link"]}
+          linkRoute={"/explore"}
+          className={styles.Button}
+        />
       </div>
       <SocialCard />
       <Footer />

@@ -17,7 +17,12 @@ export default function Header() {
             </span>
             <div className={styles.ProjectInfoButtons}>
               <Button title="List Your Meta Angels" type="primary" />
-              <Button title="Explore" type="secondary" />
+              <Button
+                title="Explore"
+                type={["link", "secondary"]}
+                linkRoute={"/explore"}
+                className={styles.ProjectInfoButtonsLink}
+              />
             </div>
           </div>
         </div>

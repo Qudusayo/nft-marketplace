@@ -1,21 +1,37 @@
-.Button {
+@mixin Button($bg) {
+  background-color: $bg !important;
   outline: none;
   border: none;
   border-radius: 50px;
-  background-color: rgb(8, 8, 154);
-  color: #ffffff;
   font-weight: 500;
   padding: 1em 1.5em;
-  font-size: 1em;
+  font-size: 1em !important;
   cursor: pointer;
+  color: #ffffff !important;
+  transition: all 0.1s linear;
+  width: fit-content
+}
+
+.Button, .Link {
+  @include Button(rgb(8, 8, 154));
+
+  &:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(4, 4, 5) !important;
+  }
 }
 
 .secondary {
-  background-color: rgba(4, 4, 5, 0.15);
-  color: #000000;
+  background-color: rgba(4, 4, 5, 0.15) !important;
+  color: #000000 !important;
+
+  &:hover {
+    background-color: rgb(8, 8, 154) !important;
+    color: #ffffff !important;
+  }
 }
 
 .smallBtn {
-  padding: 0.8em 1.5em;
-  font-size: 0.9em;
+  padding: 0.8em 1.5em !important;
+  font-size: 0.9em !important;
 }

@@ -128,7 +128,7 @@ export default function User() {
           <div className={styles.NoResult}>
             <h2>No results</h2>
             <p>You don&apos;t have any Meta Angels yet. Explore Meta Angels</p>
-            <Button title={"Explore collections"} type="small" />
+            <Button title={"Explore collections"} type={["small", "link"]} linkRoute={"/explore"} />
           </div>
         ) : (
           <div className={styles.NFTDisplayPreview}>
