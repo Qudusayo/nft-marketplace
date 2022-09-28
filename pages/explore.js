@@ -16,6 +16,7 @@ import Summary from "../components/Summary/Summary";
 import MultiRangeSlider from "../components/MultiRangeSlider/MultiRangeSlider";
 import { MenuItem } from "@mui/material";
 import Options from "../components/Options/Options";
+import RangeInput from "../components/RangeInput/RangeInput";
 
 export default function Explore({ nfts }) {
   const [activeTab, setActiveTab] = useState("nft");
@@ -30,6 +31,7 @@ export default function Explore({ nfts }) {
     rhl: "Rarity: High to low",
     rlh: "Rarity: Low to high",
   });
+  const [rarityRankRnage, setRarityRankRnage] = useState({ min: 0, max: 0 });
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -39,6 +41,12 @@ export default function Explore({ nfts }) {
   };
   const [smallControlDisplay, setSmallControlDisplay] = useState(true);
   const [gridDisplayClass, setGridDisplayClass] = useState(styles.filterLgPrev);
+
+  const rangeInputUpdate = (min, max) => {
+    if (min !== rarityRankRnage.min || max !== rarityRankRnage.max) {
+      setRarityRankRnage({ min, max });
+    }
+  };
 
   useEffect(() => {
     if (filterDisplay && !smallControlDisplay) {
@@ -61,7 +69,7 @@ export default function Explore({ nfts }) {
         <Navbar />
         <div className={styles.ExploreBid}>
           <p>Place a bid for any item from this collection</p>
-          <Button title="Place a bid" />
+          <Button title="Place a bid" className={styles.ExploreBidButton} />
         </div>
         <div className={styles.ExploreTab}>
           <span
@@ -171,38 +179,31 @@ export default function Explore({ nfts }) {
             <div className={styles.CollectionsFilterContainer}>
               <div style={{ height: "2em" }}></div>
               <div className={styles.CollectionsFilterContainerControl}>
-                <Summary title="Status">
+                <Summary title="Status" isActive={true}>
                   <Toggle label={"listed"} title="Listed Items only" />
                   <Toggle label={"c-listing"} title="Only Community listing" />
                 </Summary>
-                <Summary title="Price">
-                  <h2>Hello</h2>
-                  <h2>Hello</h2>
-                  <h2>Hello</h2>
+                <Summary title="Price" isActive={true}>
+                  <RangeInput showUnit={true} />
                 </Summary>
-                <Summary title="Rarity Rank (#1 Rarest)">
+                <Summary title="Rarity Rank (#1 Rarest)" isActive={true}>
+                  <RangeInput
+                    showUnit={false}
+                    minValue={rarityRankRnage.min}
+                    maxValue={rarityRankRnage.max}
+                    minValCtrl={() => {}}
+                    maxValCtrl={() => {}}
+                    style={{ marginBottom: ".75em" }}
+                  />
                   <MultiRangeSlider
                     min={0}
                     max={10000}
-                    onChange={({ min, max }) =>
-                      console.log(`min = ${min}, max = ${max}`)
-                    }
+                    onChange={({ min, max }) => {
+                      console.log(min, max);
+                      return rangeInputUpdate(min, max);
+                    }}
                   />
                 </Summary>
-                <Summary title="Hello" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Summary title="Status" />
-                <Toggle />
               </div>
               <div className={styles.CollectionsFilterContainerButtons}>
                 <Button title="Apply" type="secondary" />
@@ -211,11 +212,7 @@ export default function Explore({ nfts }) {
             </div>
           </div>
         )}
-        <div
-          className={[styles.CollectionsView, gridDisplayClass].join(
-            " "
-          )}
-        >
+        <div className={[styles.CollectionsView, gridDisplayClass].join(" ")}>
           {nfts.map((listedNft, index) => (
             <NFTCard
               key={index}

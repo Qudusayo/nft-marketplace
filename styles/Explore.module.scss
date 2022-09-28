@@ -8,8 +8,8 @@
       z-index: -1;
       content: "";
       width: 100vw;
-      height: 100vh;
-      background: linear-gradient(to top, #ffffff, transparent),
+      height: 80vh;
+      background: linear-gradient(to top, #ffffff, transparent, transparent),
         url("https://rarible.mypinata.cloud/ipfs/QmckrryvGkDucXD3vfbz3PQf21umQRCoxLRDf85LbWmKB3");
       background-position: center;
       background-size: cover;
@@ -18,30 +18,31 @@
   }
 
   &Bid {
-    margin: 14.5em auto 8.5em;
-    width: 24em;
+    margin: 14em auto 8.5em;
+    width: 22em;
     font-weight: 600;
-    padding: 0.7em;
+    padding: 0.75em 0.55em;
+    // padding-left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(199, 199, 199, 0.37);
     border-radius: 50px;
     backdrop-filter: blur(15.2px);
-    gap: 1em;
+    gap: .5em;
     max-width: 95%;
     box-sizing: border-box;
 
     p {
       margin: 0;
-      font-size: 0.85em;
-      padding-left: 2em;
+      font-size: 0.8em;
+      padding-left: 1em;
     }
-
-    button {
+    
+    &Button {
       width: 10.5em;
-      font-size: 0.85em;
-      font-weight: 600;
+      font-size: 0.9em !important;
+      font-weight: 500;
     }
   }
 
